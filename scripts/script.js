@@ -61,7 +61,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Cara trasera con más info
     const back = document.createElement('div');
-    back.className = 'card-face card-back bg-white dark:bg-gray-800 text-gray-100 dark:text-white p-4 flex flex-col justify-center rounded-lg';
+    back.className = 'card-face card-back bg-white dark:bg-gray-800 text-gray-800 dark:text-white p-4 flex flex-col justify-center rounded-lg';
     back.innerHTML = `
     <h2 class="text-xl font-semibold mb-2">${character.name}</h2>
     <p><strong>Especie:</strong> ${character.species}</p>
