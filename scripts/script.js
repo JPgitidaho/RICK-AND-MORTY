@@ -153,7 +153,6 @@ async function loadCharacters() {
     });
 
     ['species', 'status', 'gender'].forEach(key => {
-      // Filtro escritorio
       const dropdown = document.getElementById(`${key}Dropdown`);
       if (dropdown) {
         dropdown.addEventListener('change', e => {
@@ -163,7 +162,7 @@ async function loadCharacters() {
         });
       }
 
-      // Filtro móvil (por clase)
+      // Filtro móvil 
       const mobileDropdowns = document.querySelectorAll(`.mobile-filter.${key}`);
       mobileDropdowns.forEach(mobileDropdown => {
         mobileDropdown.addEventListener('change', e => {
@@ -206,7 +205,6 @@ async function loadCharacters() {
   }
 
   function fillDropdown(id, options) {
-    // Llenar el select principal (por ID)
     const dropdown = document.getElementById(id);
     if (dropdown) {
       dropdown.innerHTML = `<option value="" >TODOS</option>`;
