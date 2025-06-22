@@ -204,31 +204,38 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  function fillDropdown(id, options) {
-    const dropdown = document.getElementById(id);
-    if (dropdown) {
-      dropdown.innerHTML = `<option value="" >TODOS</option>`;
-      options.forEach(opt => {
-        const option = document.createElement('option');
-        option.value = opt;
-        option.textContent = opt;
-        dropdown.appendChild(option);
-      });
-    }
+ function fillDropdown(id, options) {
+  const dropdown = document.getElementById(id);
+  if (!dropdown) return;
 
-    // Obtener la clave para filtrar selects móviles por clase
-    const key = id.replace('Dropdown', '');
-    const mobileDropdowns = document.querySelectorAll(`.mobile-filter.${key}`);
-    mobileDropdowns.forEach(mobileDropdown => {
-      mobileDropdown.innerHTML = `<option value="">TODOS</option>`;
-      options.forEach(opt => {
-        const option = document.createElement('option');
-        option.value = opt;
-        option.textContent = opt;
-        mobileDropdown.appendChild(option.cloneNode(true));
-      });
+  // Determinar texto inicial según ID
+  let label = '';
+  if (id === 'speciesDropdown') label = 'ESPECIE';
+  else if (id === 'statusDropdown') label = 'ESTADO';
+  else if (id === 'genderDropdown') label = 'GENERO';
+
+  dropdown.innerHTML = `<option value="">${label}</option>`;
+  options.forEach(opt => {
+    const option = document.createElement('option');
+    option.value = opt;
+    option.textContent = opt;
+    dropdown.appendChild(option);
+  });
+
+  // Para filtros móviles también
+  const key = id.replace('Dropdown', '');
+  const mobileDropdowns = document.querySelectorAll(`.mobile-filter.${key}`);
+  mobileDropdowns.forEach(mobileDropdown => {
+    mobileDropdown.innerHTML = `<option value="">${label}</option>`;
+    options.forEach(opt => {
+      const option = document.createElement('option');
+      option.value = opt;
+      option.textContent = opt;
+      mobileDropdown.appendChild(option.cloneNode(true));
     });
-  }
+  });
+}
+
 
   // Inicialización
   loadFilterOptions();

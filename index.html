@@ -34,51 +34,49 @@
           <!-- Filtros -->
           <div class="hidden md:flex justify-between gap-3 w-1/2 mx-8 relative">
 
-            <!-- Species -->
-            <div>
-              <select id="speciesDropdown" class="font-semibold border border-[#00b5cc] dark:border-[#6e40c9]
+  <!-- Species -->
+  <div>
+    <select id="speciesDropdown"
+      class="font-semibold border border-[#00b5cc] dark:border-[#6e40c9]
              rounded-full appearance-none focus:outline-none px-4 py-2 
-             bg-gradient-to-r from-[#00b5cc] to-white text-black
-             dark:bg-gradient-to-r dark:from-[#6e40c9] dark:to-black dark:text-[#b6ff00]">
-              </select>
-            </div>
+             bg-[#83c8d1] text-[#6e40c9] hover:text-white dark:bg-gray-800 dark:text-[#9c72f0] dark:hover:text-[#b6ff00] transition duration-300 ">
+    </select>
+  </div>
 
-            <!-- Status -->
-            <div>
-              <select id="statusDropdown" class="font-semibold border border-[#b6ff00] dark:border-[#ff61a6]
+  <!-- Status -->
+  <div>
+    <select id="statusDropdown"
+      class="font-semibold border border-[#b6ff00] 
              rounded-full appearance-none focus:outline-none px-4 py-2 
-             bg-gradient-to-r from-[#b6ff00] to-white text-black
-             dark:bg-gradient-to-r dark:from-[#ff61a6] dark:to-black dark:text-white">
-              </select>
-            </div>
+             bg-[#b6ff00] text-[#00b5cc] hover:text-white dark:bg-gray-800 dark:text-[#b6ff00] dark:hover:text-[#00b5cc] transition duration-300">
+    </select>
+  </div>
 
-            <!-- Gender -->
-            <div>
-              <select id="genderDropdown" class="font-semibold border border-[#6e40c9] dark:border-[#00b5cc]
+  <!-- Gender -->
+  <div>
+    <select id="genderDropdown"
+      class="font-semibold border border-[#6e40c9] dark:border-[#00b5cc]
              rounded-full appearance-none focus:outline-none px-4 py-2 
-             bg-gradient-to-r from-[#6e40c9] to-white text-white
-             dark:bg-gradient-to-r dark:from-[#00b5cc] dark:to-black dark:text-black">
-              </select>
-            </div>
+             bg-[#6e40c9] text-[#b6ff00] hover:text-white  dark:bg-gray-800 dark:text-[#00b5cc]  dark:hover:text-[#9c72f0] transition duration-300 ">
+    </select>
+  </div>
 
-          </div>
-
+</div>
 
 
 
-          <!-- Menú móvil (solo en pantallas menores a md) -->
-          <div id="navbar-dropdown"
-            class="hidden md:hidden absolute top-full left-0 w-full bg-blue-300 dark:bg-gray-900 p-4 z-50 space-y-3 focus:outline-none">
-            <select
-              class="mobile-filter species w-full p-2 rounded dark:bg-gray-800 dark:text-white focus:outline-none">
-            </select>
-            <select class="mobile-filter status w-full p-2 rounded dark:bg-gray-800 dark:text-white focus:outline-none">
-            </select>
-            <select class="mobile-filter gender w-full p-2 rounded dark:bg-gray-800 dark:text-white focus:outline-none">
-            </select>
-          </div>
-
+        <!-- Menú móvil (solo en pantallas menores a md) -->
+        <div id="navbar-dropdown"
+          class="hidden md:hidden absolute top-full left-0 w-full bg-blue-300 dark:bg-gray-900 p-4 z-50 space-y-3 focus:outline-none">
+          <select class="mobile-filter species w-full p-2 rounded dark:bg-gray-800 dark:text-white focus:outline-none">
+          </select>
+          <select class="mobile-filter status w-full p-2 rounded dark:bg-gray-800 dark:text-white focus:outline-none">
+          </select>
+          <select class="mobile-filter gender w-full p-2 rounded dark:bg-gray-800 dark:text-white focus:outline-none">
+          </select>
         </div>
+
+      </div>
     </nav>
   </header>
 
