@@ -48,7 +48,7 @@ document.addEventListener('DOMContentLoaded', () => {
     front.className = `
   card-face card-front flex rounded-lg shadow-md overflow-hidden
   bg-gradient-to-r via-green-200 to-blue-400
-  dark:via-gray-700 dark:to-gray-900
+  dark:via-gray-800 dark:to-gray-900
 `;
     front.innerHTML = `
     <img src="${character.image}" alt="${character.name}" class="w-1/2 h-full object-cover">
@@ -61,7 +61,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Cara trasera con más info
     const back = document.createElement('div');
-    back.className = 'card-face card-back bg-white dark:bg-gray-800 text-gray-800 dark:text-white p-4 flex flex-col justify-center rounded-lg';
+    back.className = 'card-face card-back  dark:bg-gray-800 text-gray-800 dark:text-white p-4 flex flex-col justify-center rounded-lg';
     back.innerHTML = `
     <h2 class="text-xl font-semibold mb-2">${character.name}</h2>
     <p><strong>Especie:</strong> ${character.species}</p>
@@ -93,17 +93,17 @@ document.addEventListener('DOMContentLoaded', () => {
       container.appendChild(createCard(char, applied));
     });
   }
-function renderSkeletons() {
-  const container = document.getElementById('cards-container');
-  container.innerHTML = '';
+  function renderSkeletons() {
+    const container = document.getElementById('cards-container');
+    container.innerHTML = '';
 
-  for (let i = 0; i < 6; i++) {
-    const skeleton = document.createElement('div');
-    skeleton.className = `
+    for (let i = 0; i < 6; i++) {
+      const skeleton = document.createElement('div');
+      skeleton.className = `
       w-full max-w-2xl h-64 bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden flex  mb-4
     `;
 
-    skeleton.innerHTML = `
+      skeleton.innerHTML = `
       <div class="w-1/2 h-full bg-gray-300 dark:bg-gray-700"></div>
       <div class="p-4 w-1/2 flex flex-col justify-center space-y-3">
         <div class="h-6 bg-gray-300 dark:bg-gray-600 rounded w-3/4"></div>
@@ -112,24 +112,24 @@ function renderSkeletons() {
       </div>
     `;
 
-    container.appendChild(skeleton);
+      container.appendChild(skeleton);
+    }
   }
-}
 
 
-async function loadCharacters() {
-  try {
-    renderSkeletons(); 
-    const data = await fetchCharacters(currentPage, filters);
-    renderCharacters(data.results);
-    updatePagination(data.info);
-  } catch (err) {
-    console.error(err);
-    document.getElementById('cards-container').innerHTML = '<p class="text-red-500">No se encontraron personajes.</p>';
-    document.getElementById('prevBtn').disabled = true;
-    document.getElementById('nextBtn').disabled = true;
+  async function loadCharacters() {
+    try {
+      renderSkeletons();
+      const data = await fetchCharacters(currentPage, filters);
+      renderCharacters(data.results);
+      updatePagination(data.info);
+    } catch (err) {
+      console.error(err);
+      document.getElementById('cards-container').innerHTML = '<p class="text-red-500">No se encontraron personajes.</p>';
+      document.getElementById('prevBtn').disabled = true;
+      document.getElementById('nextBtn').disabled = true;
+    }
   }
-}
 
 
   function updatePagination(info) {

@@ -32,41 +32,53 @@
           </button>
 
           <!-- Filtros -->
-          <div class="hidden md:flex justify-between gap-3 w-1/2 mx-8">
+          <div class="hidden md:flex justify-between gap-3 w-1/2 mx-8 relative">
 
-            <div class="relative w-1/3">
-              <select id="speciesDropdown"
-                class="block w-full bg-green-100 dark:bg-gradient-to-r dark:from-green-900 dark:to-black text-green-900 dark:text-white font-semibold border border-green-300 dark:border-green-600 rounded-full px-4 py-2 appearance-none focus:outline-none focus:ring-2 focus:ring-green-400 cursor-pointer">
+            <!-- Species -->
+            <div>
+              <select id="speciesDropdown" class="font-semibold border border-[#00b5cc] dark:border-[#6e40c9]
+             rounded-full appearance-none focus:outline-none px-4 py-2 
+             bg-gradient-to-r from-[#00b5cc] to-white text-black
+             dark:bg-gradient-to-r dark:from-[#6e40c9] dark:to-black dark:text-[#b6ff00]">
               </select>
             </div>
 
-            <div class="relative w-1/3">
-              <select id="statusDropdown"
-                class="block w-full bg-blue-100 dark:bg-gradient-to-r dark:from-blue-900 dark:to-black text-blue-900 dark:text-white font-semibold border border-blue-300 dark:border-blue-600 rounded-full px-4 py-2 appearance-none focus:outline-none focus:ring-2 focus:ring-blue-400 cursor-pointer">
+            <!-- Status -->
+            <div>
+              <select id="statusDropdown" class="font-semibold border border-[#b6ff00] dark:border-[#ff61a6]
+             rounded-full appearance-none focus:outline-none px-4 py-2 
+             bg-gradient-to-r from-[#b6ff00] to-white text-black
+             dark:bg-gradient-to-r dark:from-[#ff61a6] dark:to-black dark:text-white">
               </select>
             </div>
 
-            <div class="relative w-1/3">
-              <select id="genderDropdown"
-                class="block w-full bg-purple-100 dark:bg-gradient-to-r dark:from-purple-900 dark:to-black text-purple-900 dark:text-white font-semibold border border-purple-300 dark:border-purple-600 rounded-full px-4 py-2 appearance-none focus:outline-none focus:ring-2 focus:ring-purple-400 cursor-pointer">
+            <!-- Gender -->
+            <div>
+              <select id="genderDropdown" class="font-semibold border border-[#6e40c9] dark:border-[#00b5cc]
+             rounded-full appearance-none focus:outline-none px-4 py-2 
+             bg-gradient-to-r from-[#6e40c9] to-white text-white
+             dark:bg-gradient-to-r dark:from-[#00b5cc] dark:to-black dark:text-black">
               </select>
             </div>
 
           </div>
-        </div>
 
-        <!-- Menú móvil (solo en pantallas menores a md) -->
-        <div id="navbar-dropdown"
-          class="hidden md:hidden absolute top-full left-0 w-full bg-blue-300 dark:bg-gray-900 p-4 z-50 space-y-3 focus:outline-none">
-          <select class="mobile-filter species w-full p-2 rounded dark:bg-gray-800 dark:text-white focus:outline-none">
-          </select>
-          <select class="mobile-filter status w-full p-2 rounded dark:bg-gray-800 dark:text-white focus:outline-none">
-          </select>
-          <select class="mobile-filter gender w-full p-2 rounded dark:bg-gray-800 dark:text-white focus:outline-none">
-          </select>
-        </div>
 
-      </div>
+
+
+          <!-- Menú móvil (solo en pantallas menores a md) -->
+          <div id="navbar-dropdown"
+            class="hidden md:hidden absolute top-full left-0 w-full bg-blue-300 dark:bg-gray-900 p-4 z-50 space-y-3 focus:outline-none">
+            <select
+              class="mobile-filter species w-full p-2 rounded dark:bg-gray-800 dark:text-white focus:outline-none">
+            </select>
+            <select class="mobile-filter status w-full p-2 rounded dark:bg-gray-800 dark:text-white focus:outline-none">
+            </select>
+            <select class="mobile-filter gender w-full p-2 rounded dark:bg-gray-800 dark:text-white focus:outline-none">
+            </select>
+          </div>
+
+        </div>
     </nav>
   </header>
 
